@@ -1,0 +1,339 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+    /* para que baje suavemente al tocar una seccion de la pagina */
+}
+
+/* index body, nav, footer*/
+
+body {
+    font-family: 'Bebas Neue';
+    background-color: #58bb43;
+    margin: 0;
+    margin-bottom: 40px;
+
+}
+
+section[id] {
+    scroll-margin-top: 160px;
+    /* todas las section que tengan id estan un poco mas abajo de la barra de nav*/
+}
+
+h1, h2, h3 {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 9999;
+    /* Asegura que esté delante de todo */
+}
+
+.logo img {
+    height: 40px;
+    /* Ajusta la altura deseada para tu logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a, nav ul li div,
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: lightgray;
+}
+
+button {
+    font-family: 'Bebas Neue';
+    padding: 4px 16px;
+}
+
+.img-reducida {
+    width: 1000px;
+    height: auto;
+    /* Mantiene las proporciones de la imagen */
+}
+
+.carousel {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+
+    >* {
+        flex: 0 0 100%;
+    }
+}
+
+.group {
+    display: flex;
+    will-change: transform;
+    animation: scrolling 40s linear infinite;
+}
+
+.tarjeta {
+    width: 100%;
+    color: white;
+    font-size: xx-large;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    background-color: green;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+footer a:hover {
+    background-color: darkgreen;
+    transition-duration: 0.5s;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+footer ul li {
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+main {
+    margin-top: 60px;
+    /*hace que no se solape con la barra de navegacion*/
+    margin-bottom: 200px;
+    /*hace que no se solape con el footer*/
+    color: white;
+}
+
+.div-portada {
+    display: flex;
+    justify-content: center;
+
+}
+
+.img-portada {
+    max-width: 100%;
+    /* Asegura que la imagen no supere el ancho de su contenedor */
+    height: auto;
+    /* Mantiene la proporción original de la imagen */
+}
+
+/* ============================
+   PRODUCTOS (HOME)
+============================ */
+
+.seccion-productos {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.producto {
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    background-color: #72c56f;
+    background-size: contain;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    width: 22%;
+}
+
+.producto:hover {
+    background-color: #1c4410;
+    transition-duration: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.producto h3 {
+    margin: 10px 0;
+}
+
+.img-producto {
+    border-radius: 6px;
+    width: 100%;
+
+}
+
+.producto button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    display: block; 
+    width: 45%; 
+}
+
+.producto div{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ============================
+   RESEÑAS (HOME)
+============================ */
+
+.seccion-reseñas {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #4caf50;
+}
+
+.reseña {
+    background-color: #72c56f;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px #03611f;
+}
+
+.reseña:hover {
+    transform: translateY(-5px);
+    transition-duration: 0.5s;
+}
+
+/* ============================
+   CONTACTO (HOME)
+============================ */
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #56a550;
+    border-radius: 5px;
+}
+
+#contacto input,
+#contacto textarea {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+#contacto input:focus,
+#contacto textarea:focus {
+    color: green;
+    transition-duration: 0.5s;
+}
+
+#contacto button {
+    padding: 10px;
+    background-color: #1c4410;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contacto button:hover {
+    background-color: #0e2305;
+    transition-duration: 0.5s;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media(max-width: 768px) {
+    .detail-content {
+        flex-direction: column;
+    }
+
+    .detail-content .detail.product,
+    #product-full {
+        width: 100%;
+    }
+}
+
+@media(max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product {
+        width: 90%;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./img/logo.jpg" type="image/x-icon">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <!--Barra de navegacion, anclada arriba y cuando vas bajando en la pagina-->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/logo.jpg" alt="logo de la pagina" aria-label="Ir al inicio">
+                </a>
+            </div>
+            <ul>
+                <li><a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="#seccion-productos"><i class="fa-solid fa-cart-shopping"></i> Productos</a></li>
+                <li><a href="#reseñas"><i class="fa-solid fa-star"></i> Reseñas</a></li>
+                <li><a href="#contacto"><i class="fa-solid fa-user"></i> Contacto</a></li>
+                <!-- CONTADOR DE PRODUCTOS EN EL CARRITO -->
+                <li><div id="contador-carrito">Productos en carrito: 0</div></li>
+                <!-- BOTÓN PARA VACIAR EL CARRITO -->
+                <li><button id="vaciar-carrito">Vaciar Carrito</button></li>
+
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <!--CARRUSEL ARRIBA DE TODO, GIRA INFINITAMENTE-->
+        <section>
+        <div class="carousel" id="inicio">
+            <div class="group">
+                <div class="tarjeta"><img src="./img/flyer.jpg" alt="flyer para carrusel" class="img-reducida"></div>
+                <div class="tarjeta"><img src="./img/flyer.jpg" alt="flyer para carrusel" class="img-reducida"></div>
+                <div class="tarjeta"><img src="./img/flyer.jpg" alt="flyer para carrusel" class="img-reducida"></div>
+            </div>
+            <div class="group">
+                <div class="tarjeta"><img src="./img/flyer.jpg" alt="flyer para carrusel" class="img-reducida"></div>
+                <div class="tarjeta"><img src="./img/flyer.jpg" alt="flyer para carrusel" class="img-reducida"></div>
+                <div class="tarjeta"><img src="./img/flyer.jpg" alt="flyer para carrusel" class="img-reducida"></div>
+            </div>
+        </div>
+        </section>
+        <div class="div-portada">
+        <img src="./img/logoConLetras.png" class="img-portada" alt="imagen portada">
+        </div>
+        <h1>creepy cotton - pagina principal</h1>
+        
+        <!--SECCION PRODUCTOS-->
+        <h2>PRODUCTOS</h2>
+        <h3>seccion de productos disponibles</h3>
+        <section class="seccion-productos" id="seccion-productos">
+            
+        </section>
+
+        <!--SECCION RESEÑAS-->
+        <h2>RESEÑAS</h2>
+        <h3>seccion de reseñas</h3>
+        <section class="seccion-reseñas" id="reseñas">
+
+        </section>
+
+        <!--SECCION CONTACTO-->
+        <h2>Contacto</h2>
+        <h3>seccion de contacto</h3>
+        <section id="contacto">
+            <form action="https://formspree.io/f/mrbawgjz" method="POST">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej.: Maria Perez" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Ej.: mperez@gmail.com" required>
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Dejanos tu mensaje" rows="4" cols="50"
+                    required></textarea>
+                <button type="submit"> Enviar </button>
+            </form>
+        </section>
+    </main>
+    <!--Pie de pagina, queda fijo abajo-->
+    <footer>
+        <ul>
+            <li><a href="http://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/creepy.cotton/"><i class="fa-brands fa-instagram"></i></a></li>
+            <li> <a href="https://github.com/davidaira"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+
+        <h4>© 2025 creepy cotton. Todos los derechos reservados.</h4>
+    </footer>
+
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
