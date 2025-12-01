@@ -11,3 +11,6 @@ El proyecto se compone de un archivo index.html que contiene todo el codigo fuen
 El archivo index.html esta dividido en secciones, las cuales estan comentadas para entender mejor el proposito de cada una.
 
 El archivo index.js contiene los comandos de JavaScript para el desarrollo de la pagina.
+
+Se utilizo la API https://dummyjson.com/products para la carga de productos, junto con sus imagenes, titulo, descripcion y precios.
+
