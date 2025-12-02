@@ -239,6 +239,18 @@ main {
 }
 
 /* ============================
+   PRODUCTOS ELEGIDOS (CARRITO)
+============================ */
+
+.seccion-elegidos {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ============================
    RESEÑAS (HOME)
 ============================ */
 

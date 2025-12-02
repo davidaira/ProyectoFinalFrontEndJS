@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./img/logo.jpg" type="image/x-icon">
+    <title>Carrito</title>
+</head>
+
+<body>
+    <!--Barra de navegacion, anclada arriba y cuando vas bajando en la pagina-->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/logo.jpg" alt="logo de la pagina" aria-label="Ir al inicio">
+                </a>
+            </div>
+            <ul>
+                <li><a href="./index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <!-- CONTADOR DE PRODUCTOS EN EL CARRITO -->
+                <li><div id="contador-carrito">Productos en carrito: 0</div></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--SECCION CARRITO-->
+        <h1>Carrito</h1>
+        <h3>seccion de productos elegidos</h3>
+
+        <section class="seccion-elegidos" id="seccion-elegidos">
+            
+        </section>
+
+        <!-- BOTÓN PARA VACIAR EL CARRITO -->
+        <li><button id="vaciar-carrito">Vaciar Carrito</button></li>
+
+    </main>
+    <!--Pie de pagina, queda fijo abajo-->
+    <footer>
+        <ul>
+            <li><a href="http://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/creepy.cotton/"><i class="fa-brands fa-instagram"></i></a></li>
+            <li> <a href="https://github.com/davidaira"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+
+        <h4>© 2025 creepy cotton. Todos los derechos reservados.</h4>
+    </footer>
+
+    <script src="./js/carrito.js"></script>
+
+</body>
+
+</html>
