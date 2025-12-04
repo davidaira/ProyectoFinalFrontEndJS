@@ -226,6 +226,7 @@ main {
 .producto button {
     background-color: green;
     color: white;
+    font-size: 120%;
     padding: 10px;
     border-radius: 6px;
     display: block; 
@@ -248,6 +249,29 @@ main {
     text-align: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.elegidosTotal{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.elegidosTotal h2{
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.elegidosTotal button {
+    background-color: green;
+    font-size: 120%; 
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    display: block; 
+
 }
 
 /* ============================
