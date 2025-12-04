@@ -4,8 +4,6 @@ const elegidosTotal = document.querySelector(".elegidosTotal");
 
 let carrito = sessionStorage.getItem('carrito');
 
-let contador = sessionStorage.getItem('contador');
-
 // Llamamos a la API y procesamos los datos
 fetch("https://dummyjson.com/products")
   .then(response => response.json())
@@ -15,7 +13,7 @@ fetch("https://dummyjson.com/products")
 
     // Renderizamos los productos elegidos en carrito
     let elegidosHTML = "";
-
+    let total = 0;
     if (carrito) {
       for (let i = 0; i < products.length; i++) {
         const prod = products[i];
@@ -24,15 +22,21 @@ fetch("https://dummyjson.com/products")
 
           const count = contar(carrito, prod.id);
 
+          const subtotal = count * prod.price;
+
           elegidosHTML += `
         <article class="producto">
           <h2>${prod.title}</h2>
           <img src="${prod.thumbnail}" class="img-producto" alt="${prod.title}">
-          <p>${prod.description.slice(0, 50)}</p>
-          <h3>$${prod.price}</h3>
+          <h3>Precio individual: $${prod.price}</h3>
           <h3>Cantidad: ${count}</h3>
+          <h3>Subtotal: $${subtotal}</h3>
         </article>
         `;
+
+        total += subtotal;
+
+        sessionStorage.setItem('total', JSON.stringify(total)); //se guarda el total n sesion para utilizar en carrito.html
         }
       }
     }
@@ -44,9 +48,11 @@ fetch("https://dummyjson.com/products")
 
     elegidosContainer.innerHTML = elegidosHTML;
 
+
     // Activar eventos
     cargarEventosAgregar();
     actualizarContador();
+    actualizarTotal();
 
   })
   .catch(error => console.log("Error cargando la API:", error));
@@ -78,6 +84,17 @@ function actualizarContador() {
   contadorCarrito.textContent = `Productos en carrito: ${carrito.length}`;
 }
 
+// =====================================================
+// FUNCIÓN PARA ACTUALIZAR EL TOTAL EN PANTALLA
+// =====================================================
+
+const precioTotal = document.getElementById('precioTotal');
+
+function actualizarTotal() {
+  const total = JSON.parse(sessionStorage.getItem('total'))
+  precioTotal.textContent = `Total: $ ${total}`;
+}
+
 // ============================================================
 // FUNCIÓN PARA ACTIVAR EL EVENTO DE AÑADIR A TODOS LOS BOTONES
 // ============================================================
@@ -93,12 +110,14 @@ function cargarEventosAgregar() {
 }
 
 // ======================================================
-// FUNCIÓN PARA VACIAR EL CARRITO Y RESETEAR CONTADOR
+// FUNCIÓN PARA VACIAR EL CARRITO Y RESETEAR CONTADOR Y TOTAL
 // ======================================================
 
 document.getElementById('vaciar-carrito').addEventListener('click', () => {
   sessionStorage.removeItem('carrito');
+  sessionStorage.setItem('total',0);
   actualizarContador();
+  actualizarTotal();
   alert('Carrito vaciado correctamente');
 });
 
